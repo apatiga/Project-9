@@ -23,9 +23,37 @@ const questions = [
     },
 
     {
-        
-
+        type: "input",
+        name: "installation",
+        message: "list any projecr dependencies here"
+    },
+    {
+        type: "input",
+        name: "usage",
+        message: "state languages and technologies used in the project",
+    },
+    {
+        type: "input",
+        name: "contributors",
+        message: "Please list any contributors. (Use GitHub usernames)",
+        default: " ",
+    },
+    {
+        type: "input",
+        name: "name",
+        message: "State full name",
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "Provide a valid email address",
+    },
+    {
+        type: "input",
+        name: "test",
+        message: "provide a walkthrough of project if applicabale",
     }
+
 ];
 
 // TODO: Create a function to write README file
@@ -35,9 +63,9 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.createPromptModule(questions).then(responses) -> (
-        console.log("Creating Professional README.md File...");
-        writeToFile("./dist/README.md" , generateMarkdown({ ...responses }))
+    inquirer.createPromptModule(questions).then(responses)(
+        console.log("Creating Professional README.md File..."),
+        writeToFile("./file/README.md" , generateMarkdown({ ...responses }))
     );
 }
 
